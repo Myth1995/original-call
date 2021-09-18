@@ -1,63 +1,70 @@
 <template>
-  <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <div class="footer">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container d-block d-lg-flex">
+        <ul class="navbar-nav mr-auto footer_menu">
+          <li class="nav-item footer_menu_copyright">©Aircall</li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Privacy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Terms of use</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Site map</a>
+          </li>
+        </ul>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">
-                Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >Dropdown</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
+        <ul class="navbar-nav ml-auto flex-row footer_socials">
+          <li class="nav-item">
+            <a href="#">
+              <img src="/twitter.svg" alt="aircall-twitter" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#">
+              <img src="/facebook.svg" alt="aircall-facebook" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#">
+              <img src="/linkedin.svg" alt="aircall-linkedin" />
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   </div>
 </template>
+<style lang="scss" scoped>
+.footer {
+  background-color: $color-grey-lighter;
+  border-top: 1px solid $color-grey-light;
+  &_menu {
+    .nav-link {
+      color: $color-grey;
+      font-size: 14px;
+      transition: color 0.2s ease-out;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+    &_copyright {
+      color: $color-grey;
+      font-size: 14px;
+      padding: 0.5rem 0;
+    }
+  }
+  &_socials {
+    @include breakpoint(mobileonly) {
+      margin-top: 16px;
+    }
+    li:not(:last-child) {
+      margin-right: 8px;
+      @include breakpoint(mobileonly) {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+</style>
